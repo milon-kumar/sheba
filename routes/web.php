@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\backend\DoctorsController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\FrontendController;
@@ -63,4 +64,11 @@ Route::prefix('/admin')->middleware(['auth'])->group(function(){
     Route::post('/service/add', [ServiceController::class,'store'])->name('service.store');
     Route::get('/service/pircelist-download', [ServiceController::class,'pdf'])->name('pricelist.pdf');
 
+
+
+//    New Route List
+
+    Route::group(['as'=>'admin.'],function (){
+        Route::resource('/doctor',DoctorsController::class);
+    });
 });

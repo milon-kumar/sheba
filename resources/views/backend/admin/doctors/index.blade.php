@@ -25,6 +25,7 @@
     <section class="section">
         <div class="card">
             <div class="card-header">
+                <a href="{{route('admin.doctor.create')}}" class="btn btn-primary">Add Doctor</a>
             </div>
             <div class="card-body">
                 <table class="table table-striped table-sm table-hover table-light" id="table1">
